@@ -23,23 +23,27 @@ traffic_system = None
 
 class TrafficSystem:
     def __init__(self):
+        base_dir = os.path.dirname(__file__)
+        video_dir = os.path.join(base_dir, "videos")
+
         self.video_paths = [
-            "videos/camera1.mp4",
-            "videos/camera3.mp4", 
-            "videos/camera4.mp4",
-            "videos/camera5.mp4"
+            os.path.join(video_dir, "camera1.mp4"),
+            os.path.join(video_dir, "camera3.mp4"),
+            os.path.join(video_dir, "camera4.mp4"),
+            os.path.join(video_dir, "camera5.mp4"),
         ]
-        
+
         self.extra_video_paths = [
-            "videos/camera2.mp4",
-            "videos/camera6.mp4",
-            "videos/camera7.mp4", 
-            "videos/camera8.mp4"
+            os.path.join(video_dir, "camera2.mp4"),
+            os.path.join(video_dir, "camera6.mp4"),
+            os.path.join(video_dir, "camera7.mp4"),
+            os.path.join(video_dir, "camera8.mp4"),
         ]
         
         self.caps = [cv2.VideoCapture(p) for p in self.video_paths]
         self.extra_caps = [cv2.VideoCapture(p) for p in self.extra_video_paths]
-        self.model = YOLO("model/yolov8l.pt")
+        model_path = os.path.join(base_dir, "model", "yolov8l.pt")
+        self.model = YOLO(model_path)
         
         self.direction_names = ["North", "East", "South", "West"]
         self.done = [0, 0, 0, 0]

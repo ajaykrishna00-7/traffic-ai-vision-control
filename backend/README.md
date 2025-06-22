@@ -26,6 +26,13 @@ python app.py
 
 The server will start on http://localhost:5000
 
+## Path Resolution
+
+`app.py` builds absolute paths for the video files and YOLO model using
+`os.path.dirname(__file__)`. This means the backend can be started from any
+working directory and still locate the resources located in `backend/videos/`
+and `backend/model/`.
+
 ## API Endpoints
 
 - `GET /api/status` - Get current system status
