@@ -1,4 +1,6 @@
+# ========================
 # Logs
+# ========================
 logs
 *.log
 npm-debug.log*
@@ -7,18 +9,71 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# ========================
+# Node Modules
+# ========================
+node_modules/
+
+# ========================
+# Build Output
+# ========================
+dist/
+dist-ssr/
 *.local
 
-# Editor directories and files
+# ========================
+# Python Stuff
+# ========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+*.egg
+*.sqlite3
+
+# ========================
+# Python virtual environments
+# ========================
+env/
+venv/
+ENV/
+.venv/
+
+# ========================
+# Environment Files
+# ========================
+.env
+.env.*.local
+
+# ========================
+# Videos & Models (backend assets)
+# ========================
+backend/videos/
+backend/model/
+
+# ========================
+# IDEs & Editor Junk
+# ========================
 .vscode/*
 !.vscode/extensions.json
-.idea
+.idea/
 .DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# ========================
+# MacOS/Linux metadata
+# ========================
+*.DS_Store
+*.AppleDouble
+*.LSOverride
+
+# ========================
+# Thumbnails and other system garbage
+# ========================
+Thumbs.db
+ehthumbs.db
