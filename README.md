@@ -89,7 +89,7 @@ backend/videos/   # sample traffic videos
 
 ```bash
 python backend/app.py
-
+```
 ### Start the Frontend
 
 ```bash
